@@ -22,6 +22,14 @@ angular.module('minesweeper', ['minesweeper.tablefactory', 'minesweeper.minefact
   }
 
   $scope.reveal = function(square) {
-    console.log('square: ', square);
+    if (params.firstClick) {
+      MineFactory.addMines($scope.table, {row: square.row, col: square.col}, params);
+      for (var i = 0; i < params.size; i++) {
+        for (var j = 0; j < params.size; j++) {
+          MineFactory.countMines($scope.table, i, j, params);
+        }
+      }
+      params.firstClick = false;
+    }
   }
 });

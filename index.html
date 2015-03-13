@@ -15,9 +15,9 @@
       <input type="text" ng-model="table.num"></input>
     </div>
     <button ng-click="init()">Start!</button>
-    <table border="1">
+    <table border="1" width="500" height="500">
       <tr ng-repeat="row in table.rows">
-        <td ng-repeat="square in row.cols" ng-click="reveal(square)">{{square.covered}}</td>
+        <td ng-repeat="square in row.cols" ng-click="reveal(square)">{{square.count}}</td>
       </tr>
     </table>
   </div>
