@@ -16,7 +16,6 @@ angular.module('minesweeper.minefactory', ['minesweeper.helperfactory'])
       if ((row === initial.row && col === initial.col) || square.mined) {
         i--;
       } else {
-        console.log('row: ', row, " col: ", col, " is mined!");
         square.mined = true;
       }
     }

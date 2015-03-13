@@ -7,17 +7,13 @@ angular.module('minesweeper.helperfactory', [])
     return table.rows[row].cols[col];
   };
 
-  // helper function that handles when a player steps on a mine
-  var endGame = function() {
-    alert('you lose!');
-  };
-
   // helper function that checks for win condition
   var checkWin = function(params) {
     // if number of uncovered squares is equal to size^2 - # of mines, player wins
     if (params.uncovered === Math.pow(params.size, 2) - params.num) {
-      alert('You Win!');
+      return true;
     }
+    return false;
   };
 
   // helper function that resets the parameter of the game
@@ -28,7 +24,6 @@ angular.module('minesweeper.helperfactory', [])
 
   return {
     getSquare: getSquare,
-    endGame: endGame,
     checkWin: checkWin,
     resetParams: resetParams
   };

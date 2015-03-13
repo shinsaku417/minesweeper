@@ -15,14 +15,19 @@
       <span>Enter Number of mines</span>
       <input type="text" ng-model="params.num"></input>
     </div>
+    <div>
+      Squares uncovered: {{params.uncovered}}<br>
+      Number of mines: {{params.num}}<br>
+    </div>
     <button ng-click="init()">Start!</button>
-    <table border="1">
+    <table border="1" ng-class="{'hidden' : table.hidden}">
+    <div ng-class="{'hidden' : !finished}">
+      {{status}}
+    <div>
       <tr ng-repeat="row in table.rows">
       <td align="center" ng-repeat="square in row.cols" ng-click="uncover(square)"><span ng-class="{'hidden' : square.covered}">{{square.count}}</p></td>
       </tr>
     </table>
-    <div>
-      Squares uncovered: {{params.uncovered}}
   </div>
   <script src="js/app.js"></script>
   <script src="js/tablefactory.js"></script>

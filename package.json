@@ -1,0 +1,17 @@
+{
+  "name": "minesweeper",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shinsaku417/minesweeper.git"
+  },
+  "author": "Shin Uesugi",
+  "dependencies": {
+    "express": "^4.4.5"
+  }
+}
