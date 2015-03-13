@@ -2,13 +2,21 @@ angular.module('minesweeper.tablefactory', [])
 
 .factory('TableFactory', function() {
   var table = {};
+  // function that creates the table given parameters
   var createTable = function(params) {
     var size = params.size;
+    // create array for rows in the table
     table.rows = [];
     for (var i = 0; i < size; i++) {
       var row = {};
+      // create columns for each row in the table
       row.cols = [];
       for (var j = 0; j < size; j++) {
+        // square has following properties:
+        // covered: square is covered or not
+        // count: number of surrounding mines
+        // row: square's row
+        // col: square's column
         var square = {};
         square.covered = true;
         square.count = 0;
@@ -21,6 +29,7 @@ angular.module('minesweeper.tablefactory', [])
     }
     return table;
   };
+  
   return {
     createTable: createTable
   };

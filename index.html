@@ -1,29 +1,32 @@
 <doctype! html>
 <html>
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="./bower_components/angular/angular.min.js"></script>
   <title>Minesweeper</title>
 </head>
 <body>
   <div class="container" ng-app="minesweeper" ng-controller="minesweeperCtrl">
     <div>
       <span>Enter Table Size</span>
-      <input type="text" ng-model="table.size"></input>
+      <input type="text" ng-model="params.size"></input>
     </div>
     <div>
       <span>Enter Number of mines</span>
-      <input type="text" ng-model="table.num"></input>
+      <input type="text" ng-model="params.num"></input>
     </div>
     <button ng-click="init()">Start!</button>
-    <table border="1" width="500" height="500">
+    <table border="1">
       <tr ng-repeat="row in table.rows">
-        <td ng-repeat="square in row.cols" ng-click="reveal(square)">{{square.count}}</td>
+      <td align="center" ng-repeat="square in row.cols" ng-click="uncover(square)"><span ng-class="{'hidden' : square.covered}">{{square.count}}</p></td>
       </tr>
     </table>
+    <div>
+      Squares uncovered: {{params.uncovered}}
   </div>
-  <script src="app.js"></script>
-  <script src="tablefactory.js"></script>
-  <script src="minefactory.js"></script>
-  <script src="helperfactory.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/tablefactory.js"></script>
+  <script src="js/minefactory.js"></script>
+  <script src="js/helperfactory.js"></script>
 </body>
 </html>
