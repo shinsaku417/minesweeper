@@ -1,0 +1,29 @@
+<doctype! html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+  <title>Minesweeper</title>
+</head>
+<body>
+  <div class="container" ng-app="minesweeper" ng-controller="minesweeperCtrl">
+    <div>
+      <span>Enter Table Size</span>
+      <input type="text" ng-model="table.size"></input>
+    </div>
+    <div>
+      <span>Enter Number of mines</span>
+      <input type="text" ng-model="table.num"></input>
+    </div>
+    <button ng-click="init()">Start!</button>
+    <table border="1">
+      <tr ng-repeat="row in table.rows">
+        <td ng-repeat="square in row.cols" ng-click="reveal(square)">{{square.covered}}</td>
+      </tr>
+    </table>
+  </div>
+  <script src="app.js"></script>
+  <script src="tablefactory.js"></script>
+  <script src="minefactory.js"></script>
+  <script src="helperfactory.js"></script>
+</body>
+</html>
