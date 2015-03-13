@@ -1,0 +1,13 @@
+{
+  "name": "minesweeper",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client"
+  ],
+  "dependencies": {
+    "angular": "~1.2.18",
+  }
+}
