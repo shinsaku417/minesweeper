@@ -1,9 +1,16 @@
-angular.module('minesweeper.tablefactory', [])
+angular.module('table.creator', [])
 
-.factory('TableFactory', function() {
-  var table = {};
+.factory('Creator', function() {
+
+  return {
+    createTable: createTable
+  };
+
   // function that creates the table given parameters
-  var createTable = function(params) {
+  function createTable(params) {
+    var table = {
+      hidden: false
+    };
     var size = params.size;
     // create array for rows in the table
     table.rows = [];
@@ -29,8 +36,5 @@ angular.module('minesweeper.tablefactory', [])
     }
     return table;
   };
-  
-  return {
-    createTable: createTable
-  };
+
 });

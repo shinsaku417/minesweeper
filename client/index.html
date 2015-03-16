@@ -16,22 +16,43 @@
       <input type="text" ng-model="params.num"></input>
     </div>
     <div>
-      Squares uncovered: {{params.uncovered}}<br>
+      Squares uncovered: {{params.revealed}}<br>
       Number of mines: {{params.num}}<br>
     </div>
     <button ng-click="init()">Start!</button>
-    <table border="1" ng-class="{'hidden' : table.hidden}">
-    <div ng-class="{'hidden' : !finished}">
-      {{status}}
+    <table border="1" ng-class="{'hidden' : !params.started}">
+    <div ng-class="{'hidden' : !params.finished}">
+      {{params.endMessage}}
     <div>
       <tr ng-repeat="row in table.rows">
-      <td align="center" ng-repeat="square in row.cols" ng-click="uncover(square)"><span ng-class="{'hidden' : square.covered}">{{square.count}}</p></td>
+      <td align="center" ng-repeat="square in row.cols" ng-click="reveal(square)"><span ng-class="{'hidden' : square.covered}">{{square.count}}</p></td>
       </tr>
     </table>
   </div>
+
+  <!-- SCRIPTS -->
   <script src="js/app.js"></script>
-  <script src="js/tablefactory.js"></script>
-  <script src="js/minefactory.js"></script>
-  <script src="js/helperfactory.js"></script>
+  <!-- Game logics -->
+  <script src="js/logic/LogicFactory.js"></script>
+  <script src="js/logic/worker/checker.js"></script>
+  <script src="js/logic/worker/revealer.js"></script>
+
+  <!-- Mine handler -->
+  <script src="js/mine/MineFactory.js"></script>
+  <script src="js/mine/worker/adder.js"></script>
+  <script src="js/mine/worker/counter.js"></script>
+
+  <!-- Table handler -->
+  <script src="js/table/TableFactory.js"></script>
+  <script src="js/table/worker/creator.js"></script>
+
+  <!-- Game parameters -->
+  <script src="js/param/ParamFactory.js"></script>
+  <script src="js/param/worker/resetter.js"></script>
+
+  <!-- Helpers -->
+  <script src="js/helper/HelperFactory.js"></script>
+  <script src="js/helper/worker/getter.js"></script>
+
 </body>
 </html>
