@@ -1,0 +1,10 @@
+<div>
+  <table border="1" ng-class="{'hidden' : !params.started}">
+    <div ng-class="{'hidden' : !params.finished}">
+      {{params.endMessage}}
+    <div>
+    <tr ng-repeat="row in table.rows">
+      <td align="center" ng-repeat="square in row.cols" ng-click="reveal(square)"><span ng-class="{'hidden' :   square.covered}">{{square.count}}</p></td>
+    </tr>
+  </table>
+</div>

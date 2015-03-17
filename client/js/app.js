@@ -1,4 +1,4 @@
-angular.module('minesweeper', ['logic.logicfactory', 'mine.minefactory', 'table.tablefactory', 'param.paramfactory'])
+angular.module('minesweeper', ['logic.logicfactory', 'mine.minefactory', 'table.tablefactory', 'param.paramfactory', 'directives.minetable'])
 
 .controller('minesweeperCtrl', function ($scope, LogicFactory, MineFactory, TableFactory, ParamFactory) {
 
