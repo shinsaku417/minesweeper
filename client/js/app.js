@@ -1,6 +1,6 @@
 angular.module('minesweeper', ['logic.logicfactory', 'mine.minefactory', 'table.tablefactory', 'param.paramfactory', 'directives.minetable'])
 
-.controller('minesweeperCtrl', function ($scope, LogicFactory, MineFactory, TableFactory, ParamFactory) {
+.controller('MinesweeperCtrl', function ($scope, LogicFactory, MineFactory, TableFactory, ParamFactory) {
 
   // set initial parameters
   $scope.params = ParamFactory.params;
